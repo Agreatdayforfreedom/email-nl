@@ -5,8 +5,23 @@ edition = "2021"
 
 [dependencies]
 actix-web = "4.9.0"
+config = "0.14.1"
 reqwest = "0.12.9"
+serde = {version = "1.0.214", features = ["derive"]}
 tokio = "1.41.0"
+
+[dependencies.sqlx]
+version = "0.6.2"
+default-features = false
+features = [
+    "runtime-async-std-native-tls",
+    "macros",
+    "postgres",
+    "uuid",
+    "chrono",
+    "migrate"
+]
+
 
 [lib]
 path = "src/lib.rs"
